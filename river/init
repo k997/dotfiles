@@ -28,7 +28,7 @@ riverctl map normal Alt Space spawn krunner
 
 
 # Super+Q to close the focused view
-riverctl map normal Super W close
+riverctl map normal Super Q close
 
 # Super+Shift+E to exit river
 riverctl map normal Super+Alt Q exit
