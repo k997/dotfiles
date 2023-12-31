@@ -1,0 +1,45 @@
+let g:airline#extensions#tabline#enabled = 1  " 启用Airline插件的Tabline扩展
+
+set cursorline  " 突出显示当前行
+set shortmess+=I " 禁用默认的 Vim 启动消息。
+set relativenumber  " 相对行号模式,{count}k {count}j 跳转 count 行
+set laststatus=2 " 总是在底部显示状态栏，即使只有一个窗口打开。
+setlocal noswapfile  " 禁用交换文件
+set noerrorbells  " 关闭错误信息响铃
+set novisualbell  " 关闭使用可视响铃代替呼叫
+syntax on  " 启用语法高亮
+syntax enable  " 启用语法处理
+set encoding=utf-8  " 设置编码为UTF-8
+set cursorline  " 突出显示当前行
+set t_Co=256  " 设置终端颜色数量为256
+set number  " 显示行号
+"set nowrap  " 不自动换行
+set linebreak  " 自动换行
+set showbreak=+++  " 设置换行符
+set textwidth=100  " 设置文本宽度为100
+set showmatch  " 高亮匹配的括号
+set incsearch  " 增量搜索，实时显示搜索结果
+set hlsearch  " 高亮搜索结果
+set smartcase  " 智能搜索：当搜索字符串全部为小写时，忽略大小写；有大写字母时，区分大小写
+set ignorecase  " 忽略大小写搜索
+
+set autoindent  " 自动缩进
+"set paste  " 粘贴模式，禁用自动缩进和格式化
+set smartindent  " 智能缩进，每一行都和前一行有相同的缩进量
+set smarttab  " 智能制表符，配合 autoindent 自动依据上一行使用的是制表符/空格决定当前行使用制表符/空格进行缩进
+set expandtab  " 将制表符扩展为空格
+set shiftwidth=4  " 设置 tab/backspace 每次输入/删除的宽度
+set softtabstop=-1  " 设置软制表符的宽度设置为与 shiftwidth 相同
+" 文件类型为make(makefile) 则禁用将制表符扩展为空格
+augroup filetype_make
+    autocmd!
+    autocmd FileType make set noexpandtab
+augroup END
+
+
+
+set ruler  " 显示光标位置信息
+
+set undolevels=100  " 设置撤销次数上限为100
+set backspace=indent,eol,start  " Backspace键的行为设置：可以删除缩进、换行符和行首字符
+
