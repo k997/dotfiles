@@ -107,6 +107,7 @@ setopt HIST_IGNORE_SPACE
 setopt no_nomatch
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+export PATH=$HOME/.cargo/bin:$PATH
 
 
 if [ -f "/opt/miniconda/etc/profile.d/conda.sh" ];then
