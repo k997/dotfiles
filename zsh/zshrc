@@ -102,6 +102,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias dc=docker-compose
 alias paru="paru --bottomup"
+alias pc="proxychains -q -f ~/.config/proxychains/proxychains.conf"
+
 export EDITOR=vim
 setopt HIST_IGNORE_SPACE
 setopt no_nomatch
