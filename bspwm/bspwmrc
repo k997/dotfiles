@@ -2,9 +2,12 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom &
-pgrep -x polybar > /dev/null || ~/.config/polybar/launch.sh --hack &
 pgrep -x fcitx5 > /dev/null || fcitx5 &
-feh --bg-fill ~/Pictures/wallpaper/d9034a90f603738d0d98cf04be1bb051f919eccd.jpg
+# 不在 KDE 环境下则运行 feh 和 polybar
+if [[ -z $KDEWM ]]; then 
+    pgrep -x polybar > /dev/null || ~/.config/polybar/launch.sh --hack &
+    feh --bg-fill ~/Pictures/wallpaper/d9034a90f603738d0d98cf04be1bb051f919eccd.jpg
+fi
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
@@ -18,13 +21,15 @@ bspc config gapless_monocle      true
 
 bspc config focus_follows_pointer true
 
-
 bspc rule -a Microsoft-edge desktop='^2' follow=on focus=on
 bspc rule -a weixin desktop='^9' state=floating follow=on focus=on
+bspc rule -a wechat desktop='^9' state=floating follow=on focus=on
 bspc rule -a qqmusic desktop='^9' state=floating
 bspc rule -a Steam desktop='^8' state=floating
 bspc rule -a Thunar  state=floating
 bspc rule -a Code desktop='^3' follow=on
 
+
+bspc rule -a krunner state=floating
 bspc rule -a Bochs state=floating
 bspc rule -a Fsearch state=floating
